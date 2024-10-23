@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>EV Admin - Electric Vehicle Recharge Bunk</title>
+  <meta name="title" content="Electric Vehicle Recharge Bunk Admin">
+  <meta name="description" content="Admin panel for managing EV recharge bunk locations and slots.">
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="font.css">
+</head>
+<body id="top">
+  <div class="preload-box" data-preloader>
+    <img src="images/loading.svg" width="45" height="45" alt="loading">
+    <img src="images/loading-circle.svg" width="75" height="75" alt="loading" class="preload-circle">
+  </div>
+
+  <header class="header" data-header>
+    <div class="container">
+      <a href="#" class="logo">
+        <img src="images/evlogo.png" width="100" height="30" alt="Electric Vehicle Recharge Bunk" id="ev">
+      </a>
+      <nav class="navbar" data-navbar>
+        <ul class="navbar-list">
+          <li class="navbar-item">
+            <a href="#" class="navbar-link">Home</a>
+          </li>
+          <li class="navbar-item">
+            <a href="#" class="navbar-link">Services</a>
+          </li>
+          <li class="navbar-item">
+            <a href="#" class="navbar-link">Stations</a>
+          </li>
+          <li class="navbar-item">
+            <a href="#" class="navbar-link">Blog</a>
+          </li>
+          <li class="navbar-item">
+            <a href="#" class="navbar-link">Contact Us</a>
+          </li>
+        </ul>
+      </nav>
+      <div class="header-action">
+        <a href="tel:+918299890048" class="contact-number">
+          <ion-icon name="call-outline" aria-hidden="true"></ion-icon>
+          <span class="span">Your Account</span>
+        </a>
+        <a href="#" class="btn btn-primary">
+          <span class="span">Get a Quote</span>
+          <ion-icon name="arrow-forward" aria-hidden="true"></ion-icon>
+        </a>
+      </div>
+      <button class="nav-toggle-btn" aria-label="toggle menu" data-nav-toggler>
+        <ion-icon name="menu-outline" aria-hidden="true" class="open"></ion-icon>
+        <ion-icon name="close-outline" aria-hidden="true" class="close"></ion-icon>
+      </button>
+    </div>
+  </header>
+
+  <main>
+    <article>
+      <!-- Hero Section -->
+      <section class="section hero" aria-label="home">
+        <div class="container">
+          <div class="hero-content" data-reveal="left">
+            <h1 class="h1 hero-title">Admin Panel - Manage EV Bunk and<span class="span">Recharge Slots</span>!</h1>
+            <ul class="hero-list">
+              <li>
+                <div class="hero-card">
+                  <ion-icon name="bolt-outline" aria-hidden="true"></ion-icon>
+                  <p class="card-subtitle">Fast Charging</p>
+                  <p class="card-title">Up to 80% in 30 min</p>
+                </div>
+              </li>
+              <li>
+                <div class="hero-card">
+                  <ion-icon name="stopwatch-outline" aria-hidden="true"></ion-icon>
+                  <p class="card-subtitle">Convenient Hours</p>
+                  <p class="card-title">24/7 Availability</p>
+                </div>
+              </li>
+              <li>
+                <div class="hero-card">
+                  <ion-icon name="checkmark-circle" aria-hidden="true"></ion-icon>
+                  <p class="card-subtitle">Eco-Friendly</p>
+                  <p class="card-title">Sustainable Energy</p>
+                </div>
+              </li>
+            </ul>
+            <a href="#" class="btn btn-primary">
+              <span class="span">Find Your Nearest Station</span>
+              <ion-icon name="arrow-forward-outline" aria-hidden="true"></ion-icon>
+            </a>
+          </div>
+          <figure class="hero-banner" data-reveal="right">
+            <img src="images/ev4.png" width="1000" height="766" alt="Electric Vehicle Charging Station" class="w-100">
+          </figure>
+        </div>
+</section>
+
+
+    
+
+    <section class="admin-panel">
+        
+
+        <!-- Section 1: Create EV Bunk Location Details -->
+        <section id="create-bunk" class="admin-section">
+          <div class="container">
+          <h2>Create EV Bunk Location Details</h2>
+          <form action="/create-bunk" method="POST">
+            <div class="form-group">
+              <label for="bunk-name">Bunk Name:</label>
+              <input type="text" id="bunk-name" name="bunk-name" placeholder="Enter bunk name" required>
+            </div>
+            <div class="form-group">
+              <label for="bunk-location">Bunk Location (Address):</label>
+              <input type="text" id="bunk-location" name="bunk-location" placeholder="Enter location address" required>
+            </div>
+            <div class="form-group">
+              <label for="latitude">Latitude:</label>
+              <input type="text" id="latitude" name="latitude" placeholder="Enter latitude" required>
+            </div>
+            <div class="form-group">
+              <label for="longitude">Longitude:</label>
+              <input type="text" id="longitude" name="longitude" placeholder="Enter longitude" required>
+            </div>
+            <button type="submit" class="btn btn-primary">Create Location</button>
+          </form>
+        </div>
+        </section>
+
+        <!-- Section 2: Manage Bunk Details -->
+        <section id="manage-bunk" class="admin-section">
+          <div class="container">
+          <h2>Manage Bunk Details</h2>
+          <form action="/manage-bunk" method="POST">
+            <div class="form-group">
+              <label for="select-bunk">Select Bunk:</label>
+              <select id="select-bunk" name="select-bunk">
+                <option value="bunk1">Bunk 1</option>
+                <option value="bunk2">Bunk 2</option>
+                <option value="bunk3">Bunk 3</option>
+              </select>
+            </div>
+            <div class="form-group">
+              <label for="bunk-status">Bunk Status:</label>
+              <select id="bunk-status" name="bunk-status">
+                <option value="active">Active</option>
+                <option value="inactive">Inactive</option>
+              </select>
+            </div>
+            <button type="submit" class="btn btn-primary">Update Bunk Details</button>
+          </form>
+        </div>
+        </section>
+
+        <!-- Section 3: Manage Recharge Slots -->
+        <section id="manage-slots" class="admin-section">
+          <div class="container">
+          <h2>Manage Recharge Slots</h2>
+          <form action="/manage-slots" method="POST">
+            <div class="form-group">
+              <label for="bunk-slot-bunk">Select Bunk:</label>
+              <select id="bunk-slot-bunk" name="bunk-slot-bunk">
+                <option value="bunk1">Bunk 1</option>
+                <option value="bunk2">Bunk 2</option>
+                <option value="bunk3">Bunk 3</option>
+              </select>
+            </div>
+            <div class="form-group">
+              <label for="available-slots">Available Recharge Slots:</label>
+              <input type="number" id="available-slots" name="available-slots" min="1" placeholder="Enter available slots" required>
+            </div>
+            <button type="submit" class="btn btn-primary">Update Slots</button>
+          </form>
+        </section>
+      </div>
+    </div>
+    </section>
+
+    <section class="section contact" aria-labelledby="contact-label">
+      <div class="container">
+        <p class="section-subtitle has-before" id="contact-label">Contact Us</p>
+        <h2 class="h2 section-title">We'd Love to Hear From You!</h2>
+        <form action="#" class="contact-form">
+          <div class="form-group">
+            <label for="name" class="sr-only">Name</label>
+            <input type="text" name="name" id="name" placeholder="Your Name" required>
+          </div>
+          <div class="form-group">
+            <label for="email" class="sr-only">Email</label>
+            <input type="email" name="email" id="email" placeholder="Your Email" required>
+          </div>
+          <div class="form-group">
+            <label for="message" class="sr-only">Message</label>
+            <textarea name="message" id="message" placeholder="Your Message" required></textarea>
+          </div>
+          <button type="submit" class="btn btn-primary">
+            <span class="span">Send Message</span>
+            <ion-icon name="arrow-forward" aria-hidden="true"></ion-icon>
+          </button>
+        </form>
+      </div>
+    </section>
+  </main>
+
+
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-top">
+        <a href="#" class="logo">
+          <img src="images/evlogo.png" width="160" height="50" alt="Electric Vehicle Recharge Bunk">
+        </a>
+        <div class="footer-links">
+          <a href="#" class="footer-link">Privacy Policy</a>
+          <a href="#" class="footer-link">Terms of Service</a>
+          <a href="#" class="footer-link">Help Center</a>
+        </div>
+      </div>
+      <p class="footer-text">&copy; 2024 Electric Vehicle Recharge Bunk. All Rights Reserved.</p>
+    </div>
+  </footer>
+  <script src="script.js"></script>
+</body>
+
+</html>

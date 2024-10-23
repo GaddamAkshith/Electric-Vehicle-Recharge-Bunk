@@ -1,0 +1,522 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Electric Vehicle Recharge Bunk</title>
+  <meta name="title" content="Electric Vehicle Recharge Bunk">
+  <meta name="description" content="Providing convenient charging solutions for electric vehicles.">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <script src="https://maps.googleapis.com/maps/api/js?key=YOUR_API_KEY&callback=initMap" async defer></script>
+
+  <link rel="stylesheet"href="https://unpkg.com/boxicons@latest/css/boxicons.min.css">
+
+  <link rel="shortcut icon" href="static/images/evlogo.png" type="image/avif+xml">
+  <link rel="stylesheet" href="static/style.css">
+  <link rel="stylesheet" href="static/font.css">
+  <!-- <link rel="preload" as="image" href="images/loading.svg">
+  <link rel="preload" as="image" href="images/loading-circle.svg">-->
+  <link rel="preload" as="image" href="static/images/ev4.png" 
+</head>
+
+<body id="top">
+  <div class="preload-box" data-preloader>
+    <img src="static/images/loading.svg" width="45" height="45" alt="loading">
+    <img src="static/images/loading-circle.svg" width="75" height="75" alt="loading" class="preload-circle">
+  </div>
+  <header class="header" data-header>
+    <div class="container">
+      <a href="#" class="logo" "> <img src="static/images/evlogo.png" width="100" height="30" alt="Electric Vehicle Recharge Bunk" id="ev"> </a>
+      <nav class="navbar" data-navbar>
+        <ul class="navbar-list">
+          <li class="navbar-item">
+            <a href="#" class="navbar-link">Home</a>
+          </li>
+          <li class="navbar-item">
+            <a href="#about" class="navbar-link">About</a>
+          </li>
+          <li class="navbar-item">
+            <a href="#services" class="navbar-link">Services</a>
+          </li>
+          
+          <li class="navbar-item">
+            <a href="#stations" class="navbar-link">Stations</a>
+          </li>
+          <li class="navbar-item">
+            <a href="#reviwe" class="navbar-link">Reviwe</a>
+          </li>
+          <li class="navbar-item">
+            <a href="#contact " class="navbar-link">Contact Us</a>
+          </li>
+        </ul>
+      </nav>
+      <div class="header-action">
+        <a href="#" class="contact-number">
+          
+       <ion-icon name="person" aria-hidden="true">
+          {% if user%}
+               <ul>
+                <li>Name:{{ user[1] }}</li>
+                <li>Email:{{ user[2] }}</li>
+               </ul>
+              
+          {% endif %} 
+       </ion-icon>
+              
+          <span class="span"><a href="/logout" class=" btn btn-dark">Logout</a></span>
+        </a>
+
+        <a href="#" class="btn btn-primary">
+          <span class="span">Get a Quote</span>
+          <ion-icon name="arrow-forward" aria-hidden="true"></ion-icon>
+        </a>
+      </div>
+      <button class="nav-toggle-btn" aria-label="toggle menu" data-nav-toggler>
+        <ion-icon name="menu-outline" aria-hidden="true" class="open"></ion-icon>
+        <ion-icon name="close-outline" aria-hidden="true" class="close"></ion-icon>
+      </button>
+    </div>
+  </header>
+  <main>
+    <article>
+      <section class="section hero" aria-label="home">
+        <div class="container">
+          <div class="hero-content" data-reveal="left">
+            <h1 class="h1 hero-title">
+              Charge Your Electric Vehicle at Our <span class="span">Recharge Bunk</span>!
+            </h1>
+            <ul class="hero-list">
+              <li>
+                <div class="hero-card">
+                  <ion-icon name="bolt-outline" aria-hidden="true"></ion-icon>
+                  <p class="card-subtitle">Fast Charging</p>
+                  <p class="card-title">Up to 80% in 30 min</p>
+                </div>
+              </li>
+              <li>
+                <div class="hero-card">
+                  <ion-icon name="stopwatch-outline" aria-hidden="true"></ion-icon>
+                  <p class="card-subtitle">Convenient Hours</p>
+                  <p class="card-title">24/7 Availability</p>
+                </div>
+              </li>
+              <li>
+                <div class="hero-card">
+                  <ion-icon name="checkmark-circle" aria-hidden="true"></ion-icon>
+                  <p class="card-subtitle">Eco-Friendly</p>
+                  <p class="card-title">Sustainable Energy</p>
+                </div>
+              </li>
+            </ul>
+            <a href="#" class="btn btn-primary">
+              <span class="span">Find Your Nearest Station</span>
+              <ion-icon name="arrow-forward-outline" aria-hidden="true"></ion-icon>
+            </a>
+          </div>
+          <figure class="hero-banner" data-reveal="right">
+            <img src="static/images/ev4.png" width="1000" height="766" alt="Electric Vehicle Charging Station" class="w-100">
+          </figure>
+        </div>
+      </section>
+
+
+       <section class="about" id="about">
+      <section class="section about" aria-labelledby="about-label">
+        <div class="container">
+          <figure class="about-banner" data-reveal="left">
+            <img src="static/images/ev.jpg" width="380" height="382" loading="lazy" alt="About Us - Banner" class="w-100 img-1">
+            <img src="static/images/ev3.png" width="347" height="349" loading="lazy" alt="Eco-Friendly Solutions" class="w-100 img-2">
+          </figure>
+          <div class="about-content" data-reveal="right">
+            <p class="section-subtitle has-before" id="about-label">Who We Are!</p>
+            <h2 class="h2 section-title">
+              Our mission is to provide reliable charging solutions for electric vehicles.
+            </h2>
+            <p class="section-text">
+              Experience hassle-free charging with our state-of-the-art recharge bunk designed for the modern electric vehicle.
+            </p>
+            <div class="about-wrapper">
+              <div class="about-card">
+                <div class="title-wrapper">
+                  <ion-icon name="battery-charging-outline" aria-hidden="true"></ion-icon>
+                  <h3 class="card-title">Multiple Charging Options</h3>
+                </div>
+                <p class="card-text">
+                  Choose from a variety of fast charging options for your convenience.
+                </p>
+              </div>
+              <div class="about-card">
+                <div class="title-wrapper">
+                  <ion-icon name="document-text-outline" aria-hidden="true"></ion-icon>
+                  <h3 class="card-title">User-Friendly Experience</h3>
+                </div>
+                <p class="card-text">
+                  Easy-to-use interface for seamless charging experiences.
+                </p>
+              </div>
+            </div>
+            <ul class="about-list">
+              <li class="about-item">
+                <ion-icon name="checkmark-circle" aria-hidden="true"></ion-icon>
+                <span class="span">Quick and efficient service.</span>
+              </li>
+              <li class="about-item">
+                <ion-icon name="checkmark-circle" aria-hidden="true"></ion-icon>
+                <span class="span">Reliable and safe charging facilities.</span>
+              </li>
+            </ul>
+            <a href="#" class="btn btn-primary">
+              <span class="span">Learn More</span>
+              <ion-icon name="arrow-forward-outline" aria-hidden="true"></ion-icon>
+            </a>
+          </div>
+        </div>
+      </section>
+      </section>
+
+      <section class="section stats" aria-label="statistics">
+        <div class="container">
+          <ul class="stats-list" data-reveal>
+            <li class="stats-card">
+              <h3 class="h3 card-title">500+</h3>
+              <p class="card-text">Charging stations across the country.</p>
+            </li>
+            <li class="stats-card">
+              <h3 class="h3 card-title">100k</h3>
+              <p class="card-text">Customers served in the last year.</p>
+            </li>
+            <li class="stats-card">
+              <h3 class="h3 card-title">99%</h3>
+              <p class="card-text">Customer satisfaction rating.</p>
+            </li>
+          </ul>
+          <div class="stats-banner" data-reveal>
+               <video class="img-cover" autoplay playsinline muted loop>
+          <source
+            src="static/images/ev-video.mp4"  width="1398" height="765" loading="lazy" alt="Statistics Banner"
+            type="video/mp4"
+          />
+          
+        </video>
+
+          </div>
+        </div>
+      </section>
+
+       <section class="services" id="services">
+      <section class="section service" aria-labelledby="service-label">
+        <div class="container">
+          <p class="section-subtitle has-before" id="service-label" data-reveal>Our Services!</p>
+          <h2 class="h2 section-title" data-reveal>
+            What We Offer at Our Recharge Bunk
+          </h2>
+          <div class="service-wrapper">
+            <div class="service-card" data-reveal="left">
+              <img src="static/images/ev7.png" width="200" height="200" alt="Service Icon 1">
+              <h3 class="card-title">Fast Charging</h3>
+              <p class="card-text">Charge your vehicle in under 30 minutes.</p>
+            </div>
+            <div class="service-card" data-reveal="bottom">
+              <img src="static/images/ev9.png" width="200" height="200" alt="Service Icon 2">
+              <h3 class="card-title">Multiple Payment Options</h3>
+              <p class="card-text">Pay conveniently using various methods.</p>
+            </div>
+            <div class="service-card" data-reveal="right">
+              <img src="static/images/ev8.png" width="200" height="200" alt="Service Icon 3">
+              <h3 class="card-title">24/7 Customer Support</h3>
+              <p class="card-text">Reach us anytime for assistance with your charging needs.</p>
+            </div>
+          </div>
+        </div>
+      </section>
+      </section>
+
+      <section id="map">
+        <h2>Find Nearby Charging Stations</h2>
+  
+        <div>
+        <iframe src="https://www.google.com/maps/embed?pb=!1m10!1m8!1m3!1d5581865.410891282!2d-1.259589!3d50.851678!3m2!1i1024!2i768!4f13.1!5e1!3m2!1sen!2suk!4v1728476029058!5m2!1sen!2suk" id="map-container" style="height: 500px; width: 100%;"" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+      </div>
+    </section>
+
+      <section class="stations" id="stations">
+
+        <section class="section blog" aria-labelledby="blog-label">
+          <div class="container">
+            <div class="title-wrapper" data-reveal>
+              <div>
+                <p class="section-subtitle has-before" id="blog-label">Stations</p>
+                <h2 class="h2 section-title">Explore Our Recharge Stations</h2>
+              </div>
+              <a href="#" class="btn btn-secondary">
+                <span class="span">View More Stations</span>
+                <ion-icon name="arrow-forward-outline" aria-hidden="true"></ion-icon>
+              </a>
+            </div>
+            <ul class="blog-list" data-reveal>
+              <li>
+                <div class="blog-card">
+                  <figure class="card-banner img-holder" style="--width: 770; --height: 550;">
+                    <img src="static/images/ev12.jpg" width="770" height="550" loading="lazy"
+                      alt="Energy Star Certified Electric Vehicle Chargers" class="img-cover">
+                  </figure>
+                  <div class="card-content">
+                    <time class="publish-date" datetime="2022-06-03">03 Jun 2022</time>
+                    <ul class="card-meta-list">
+                      <li class="card-meta-item">
+                        <ion-icon name="person-outline" aria-hidden="true"></ion-icon>
+                        <span class="span">Admin</span>
+                      </li>
+                      <li class="card-meta-item">
+                        <ion-icon name="location-outline" aria-hidden="true"></ion-icon>
+                        <span class="span">Location</span>
+                      </li>
+                    </ul>
+                    <h3 class="h5">
+                      <a href="#" class="card-title">
+                        <h4>Address</h4>
+                        Energy Star Certified Electric Vehicle Chargers
+                      </a>
+                    </h3>
+                  </div>
+                </div>
+              </li>
+              <li>
+                <div class="blog-card">
+                  <figure class="card-banner img-holder" style="--width: 770; --height: 550;">
+                    <img src="static/images/ev1.jpg" width="770" height="550" loading="lazy"
+                      alt="Charging Solution For Electric Car & Hybrid Car" class="img-cover">
+                  </figure>
+                  <div class="card-content">
+                    <time class="publish-date" datetime="2022-06-03">03 Jun 2022</time>
+                    <ul class="card-meta-list">
+                      <li class="card-meta-item">
+                        <ion-icon name="person-outline" aria-hidden="true"></ion-icon>
+                        <span class="span">Admin</span>
+                      </li>
+                      <li class="card-meta-item">
+                        <ion-icon name="location-outline" aria-hidden="true"></ion-icon>
+                        <span class="span">Location</span>
+                      </li>
+                    </ul>
+                    <h3 class="h5">
+                      <a href="#" class="card-title">
+                        <h4>Address</h4>
+                        Charging Solution For Electric Car & Hybrid Car
+                      </a>
+                    </h3>
+                  </div>
+                </div>
+              </li>
+              <li>
+                <div class="blog-card">
+                  <figure class="card-banner img-holder" style="--width: 770; --height: 550;">
+                    <img src="static/images/ev13.jpg" width="770" height="550" loading="lazy"
+                      alt="Home Charging Station For A Electric Vehicless" class="img-cover">
+                  </figure>
+                  <div class="card-content">
+                    <time class="publish-date" datetime="2022-06-03">03 Jun 2022</time>
+                    <ul class="card-meta-list">
+                      <li class="card-meta-item">
+                        <ion-icon name="person-outline" aria-hidden="true"></ion-icon>
+                        <span class="span">Admin</span>
+                      </li>
+                      <li class="card-meta-item">
+                        <ion-icon name="location-outline" aria-hidden="true"></ion-icon>
+                        <span class="span">Location</span>
+                      </li>
+                    </ul>
+                    <h3 class="h5">
+                      <a href="#" class="card-title">
+                        <h4>Address</h4>
+                        Home Charging Station For A Electric Vehicless
+                      </a>
+                    </h3>
+                  </div>
+                </div>
+              </li>
+            </ul>
+          </div>
+        </section>
+      </section>
+
+
+      </section>
+      <section class="section testimonial" aria-labelledby="testimonial-label">
+        <div class="container">
+          <p class="section-subtitle has-before" id="testimonial-label">Testimonials</p>
+          <h2 class="h2 section-title">What Our Customers Say!</h2>
+          <div class="testimonial-wrapper">
+            <div class="testimonial-card" data-reveal="left">
+              <p class="card-text">"The best recharge experience I've had!"</p>
+              <h3 class="h3 card-title">John Doe</h3>
+              <p class="card-subtitle">Electric Vehicle Owner</p>
+            </div>
+            <div class="testimonial-card" data-reveal="right">
+              <p class="card-text">"Fast, convenient, and eco-friendly. Highly recommended!"</p>
+              <h3 class="h3 card-title">Jane Smith</h3>
+              <p class="card-subtitle">Sustainability Advocate</p>
+            </div>
+          </div>
+        </div>
+      </section>
+      <section class="contact" aria-label="contact" data-reveal="right">
+        <div class="container">
+          <ul class="contact-list">
+            <li>
+              <div class="contact-card">
+                <div class="card-icon">
+                  <ion-icon name="call-outline" aria-hidden="true"></ion-icon>
+                </div>
+                <div>
+                  <h3 class="h6">Hot Line</h3>
+                  <a href="tel:+19123457890" class="card-subtitle">+(19) 1234-57-890</a>
+                </div>
+              </div>
+            </li>
+            <li>
+              <div class="contact-card">
+                <div class="card-icon">
+                  <ion-icon name="mail-outline" aria-hidden="true"></ion-icon>
+                </div>
+                <div>
+                  <h3 class="h6">E-mail Address</h3>
+                  <a href="gaddamakshith4@gmail.com" class="card-subtitle">gaddamakshith4@gmail.com</a>
+                </div>
+              </div>
+            </li>
+            <li>
+              <div class="contact-card">
+                <div class="card-icon">
+                  <ion-icon name="compass-outline" aria-hidden="true"></ion-icon>
+                </div>
+                <div>
+                  <h3 class="h6">Our Location</h3>
+                  <address class="card-subtitle">India ,TG,Mancherial</address>
+                </div>
+              </div>
+            </li>
+          </ul>
+        </div>
+      </section>
+    </article>
+  </main>
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-top section" data-reveal>
+        <div class="newsletter-card">
+          <div class="card-icon">
+            <ion-icon name="mail-unread-outline" aria-hidden="true"></ion-icon>
+          </div>
+          <h3 class="h3 card-title">Sign up for Booking</h3>
+          <form action="#" class="newsletter-form">
+            <label for="email" class="label">Email address</label>
+            <input type="emal" name="email" id="email" placeholder="Email address" required class="email-field">
+            <button type="submit" class="btn btn-primary">Sing up</button>
+          </form>
+        </div>
+        <div class="footer-list">
+          <p class="h6 has-after">EV ReChargeing</p>
+          <p class="footer-text">
+            Experience hassle-free charging with our state-of-the-art recharge bunk designed for the modern electric vehicle.
+          </p>
+          <a href="#" class="btn-outline">
+            <span class="span">Get a quote</span>
+            <ion-icon name="arrow-forward-outline" aria-hidden="true"></ion-icon>
+          </a>
+        </div>
+        <ul class="footer-list">
+          <li>
+            <p class="h6 has-after">Company Info</p>
+          </li>
+          <li>
+            <a href="about" class="footer-link">About Us</a>
+          </li>
+          <li>
+            <a href="#" class="footer-link">Our Projects</a>
+          </li>
+          <li>
+            <a href="#" class="footer-link">Meet Our Team</a>
+          </li>
+          <li>
+            <a href="#" class="footer-link">Services</a>
+          </li>
+          <li>
+            <a href="#" class="footer-link">Contact Us</a>
+          </li>
+          <li>
+            <a href="#" class="footer-link">Ev recharge</a>
+          </li>
+        </ul>
+        <ul class="footer-list">
+          <li>
+            <p class="h6 has-after">Quick Contact</p>
+          </li>
+          <li>
+            <address class="footer-text">
+              India ,Mancherial,TG
+            </address>
+          </li>
+          <li>
+            <p class="footer-text">
+              If you have any questions or need help, feel free to contact with our team.
+            </p>
+          </li>
+          <li>
+            <a href="tel:+918299890048" class="contact-link">(829)9890048</a>
+          </li>
+        </ul>
+      </div>
+      <div class="footer-bottom">
+        <div>
+          <ul class="footer-bottom-list">
+            <li>
+              <a href="#" class="footer-bottom-link">Where to Find Us</a>
+            </li>
+            <li>
+              <a href="#" class="footer-bottom-link">Terms of Payment</a>
+            </li>
+            <li>
+              <a href="#" class="footer-bottom-link">Stats Element</a>
+            </li>
+          </ul>
+          <p class="copyright">Made By Gaddam Akshith</p>
+        </div>
+        <img src="static/images/evlogo.png" width="100" height="63" loading="lazy" alt="Volti home" id="ev">
+        <ul class="social-list">
+          <li>
+            <a href="#" class="social-link">
+              <ion-icon name="logo-facebook" aria-hidden="true"></ion-icon>
+            </a>
+          </li>
+          <li>
+            <a href="#" class="social-link">
+              <ion-icon name="logo-twitter" aria-hidden="true"></ion-icon>
+            </a>
+          </li>
+          <li>
+            <a href="#" class="social-link">
+              <ion-icon name="logo-instagram" aria-hidden="true"></ion-icon>
+            </a>
+          </li>
+          <li>
+            <a href="#" class="social-link">
+              <ion-icon name="logo-linkedin" aria-hidden="true"></ion-icon>
+            </a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </footer>
+  <a href="#top" class="back-top-btn" aria-label="go to top" data-go-top-btn>
+    <ion-icon name="chevron-up" aria-hidden="true"></ion-icon>
+  </a>
+  <script src="static/script.js" type="module"></script>
+
+  <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+  <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+</body>
+
+</html>
